@@ -59,27 +59,35 @@ const translations = {
     hero_role: "Siswa TKJ yang membangun aplikasi web nyata — mulai dari website kelas, platform pemesanan custom design, sampai tools edit foto & konversi PDF.",
     btn_view_project: "Lihat Project →",
     btn_contact_me: "Hubungi Saya",
-    terminal_focus: "Web Development",
-    terminal_status: "Siswa",
+    fact_name: "Nama",
+    fact_major: "Jurusan",
+    fact_focus: "Fokus",
+    fact_focus_value: "Web Development",
+    fact_status: "Status",
+    fact_status_value: "Siswa",
+    fact_location: "Lokasi",
+    about_kicker: "Tentang",
     about_title: "Tentang Saya",
-    about_comment: "-- Siapa itu Azriel?",
     about_text: "Saya Azriel Aurizal Ednisia, seorang siswa jurusan Teknik Komputer dan Jaringan (TKJ) di Indonesia. Saya berfokus untuk terus mengasah kemampuan dalam pengembangan web dan jaringan melalui berbagai project nyata.",
     chip_webdev: "Web Development",
+    skills_kicker: "Keahlian",
     skills_title: "Keahlian & Stack",
     skills_cat_languages: "Languages",
     skills_cat_databases: "Databases",
     skills_cat_tools: "Tools",
+    projects_kicker: "Project",
     projects_title: "Project Saya",
     project_desc_1: "Project web kelas untuk berbagi informasi, materi, dan dokumentasi kegiatan TKJ 1.",
     project_desc_2: "Platform web untuk pemesanan dan penjualan produk desain kustom (custom design) sesuai kebutuhan pelanggan.",
     project_desc_3: "Aplikasi web photo studio interaktif dan alat konversi dokumen PDF.",
+    certs_kicker: "Sertifikat",
     certs_title: "Sertifikat",
     cert_empty: "Sertifikat lainnya menyusul.",
+    contact_kicker: "Kontak",
     contact_title: "Hubungi Saya",
     contact_label_email: "Email",
     contact_whatsapp_cta: "Chat via WhatsApp",
-    footer_text: "Dibuat dengan dedikasi.",
-    row_count: (n) => `${n} baris ditemukan`
+    footer_text: "Dibuat dengan dedikasi."
   },
   en: {
     nav_about: "About",
@@ -92,27 +100,35 @@ const translations = {
     hero_role: "A TKJ student building real web applications — from class websites to a custom-order platform and photo/PDF tools.",
     btn_view_project: "View Projects →",
     btn_contact_me: "Contact Me",
-    terminal_focus: "Web Development",
-    terminal_status: "Student",
+    fact_name: "Name",
+    fact_major: "Major",
+    fact_focus: "Focus",
+    fact_focus_value: "Web Development",
+    fact_status: "Status",
+    fact_status_value: "Student",
+    fact_location: "Location",
+    about_kicker: "About",
     about_title: "About Me",
-    about_comment: "-- Who is Azriel?",
     about_text: "I'm Azriel Aurizal Ednisia, a student majoring in Computer and Network Engineering (TKJ) in Indonesia. I am dedicated to continuously sharpening my web development and networking skills through hands-on projects.",
     chip_webdev: "Web Development",
+    skills_kicker: "Skills",
     skills_title: "Skills & Stack",
     skills_cat_languages: "Languages",
     skills_cat_databases: "Databases",
     skills_cat_tools: "Tools",
+    projects_kicker: "Projects",
     projects_title: "My Projects",
     project_desc_1: "A class web application designed for sharing info, learning materials, and activities for TKJ 1.",
     project_desc_2: "A web platform dedicated to custom design services and tailored creative products.",
     project_desc_3: "An interactive web photo studio application and PDF document converter.",
+    certs_kicker: "Certificates",
     certs_title: "Certificates",
     cert_empty: "More certificates coming soon.",
+    contact_kicker: "Contact",
     contact_title: "Contact Me",
     contact_label_email: "Email",
     contact_whatsapp_cta: "Chat on WhatsApp",
-    footer_text: "Built with care.",
-    row_count: (n) => `${n} rows returned`
+    footer_text: "Built with care."
   }
 };
 
@@ -126,11 +142,7 @@ function setLanguage(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (dict[key]) {
-      if (typeof dict[key] === 'string' && dict[key].includes('<strong>')) {
-        el.innerHTML = dict[key];
-      } else {
-        el.textContent = dict[key];
-      }
+      el.textContent = dict[key];
     }
   });
 
@@ -141,46 +153,11 @@ function setLanguage(lang) {
   });
 
   document.documentElement.lang = lang;
-
-  const rc = document.getElementById('rowCount');
-  if (rc && rc.dataset.filled === 'true') {
-    rc.textContent = dict.row_count(5);
-  }
 }
 
 langBtns.forEach(btn => {
   btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
 });
-
-// ==================== Terminal Typing Animation ====================
-const queryStr = "SELECT * FROM profile WHERE role = 'Student';";
-const typedEl = document.getElementById('typedQuery');
-const resultTable = document.getElementById('resultTable');
-const rowCount = document.getElementById('rowCount');
-const cursor = document.getElementById('typeCursor');
-
-function highlightSyntax(str) {
-  return str
-    .replace(/SELECT|FROM|WHERE/g, m => `<span class="kw">${m}</span>`)
-    .replace(/'([^']*)'/g, `<span class="str">'$1'</span>`);
-}
-
-let charIdx = 0;
-function typeStep() {
-  if (charIdx <= queryStr.length) {
-    typedEl.innerHTML = highlightSyntax(queryStr.slice(0, charIdx));
-    charIdx++;
-    setTimeout(typeStep, 25);
-  } else {
-    cursor.style.display = 'none';
-    setTimeout(() => {
-      resultTable.classList.add('show');
-      rowCount.textContent = translations[currentLang].row_count(5);
-      rowCount.dataset.filled = 'true';
-    }, 200);
-  }
-}
-setTimeout(typeStep, 400);
 
 // ==================== Scroll Reveal ====================
 const reveals = document.querySelectorAll('.reveal');

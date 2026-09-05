@@ -9,7 +9,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -21,7 +21,7 @@
   <header class="header">
     <div class="container nav-inner">
       <a href="#" class="logo">
-        <span class="logo-prompt" aria-hidden="true">$</span>azriel
+        <span class="logo-mark" aria-hidden="true"></span>Azriel
       </a>
 
       <nav class="nav-links" id="navLinks">
@@ -75,51 +75,27 @@
           <a href="#contact" class="btn btn-secondary" data-i18n="btn_contact_me">Hubungi Saya</a>
         </div>
 
-        <!-- SQL Interactive Terminal -->
-        <div class="terminal" role="img" aria-label="Terminal yang menampilkan ringkasan profil dalam format query SQL">
-          <div class="terminal-header">
-            <div class="terminal-dots" aria-hidden="true">
-              <span class="dot-red"></span>
-              <span class="dot-yellow"></span>
-              <span class="dot-green"></span>
-            </div>
-            <div class="terminal-title">azriel@portfolio: ~ (bash)</div>
+        <!-- Quick facts panel -->
+        <div class="facts-panel">
+          <div class="fact-row">
+            <span class="fact-label" data-i18n="fact_name">Nama</span>
+            <span class="fact-value">Azriel Aurizal Ednisia</span>
           </div>
-          <div class="terminal-body">
-            <div class="prompt-line">
-              <span class="prompt-symbol" aria-hidden="true">➜</span> ~ <span id="typedQuery"></span><span class="cursor" id="typeCursor" aria-hidden="true"></span>
-            </div>
-            <table class="result-table" id="resultTable">
-              <thead>
-                <tr>
-                  <th>Field</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Name</td>
-                  <td>Azriel Aurizal Ednisia</td>
-                </tr>
-                <tr>
-                  <td>Major</td>
-                  <td>Teknik Komputer &amp; Jaringan (TKJ)</td>
-                </tr>
-                <tr>
-                  <td>Focus</td>
-                  <td data-i18n="terminal_focus">Web Development</td>
-                </tr>
-                <tr>
-                  <td>Status</td>
-                  <td data-i18n="terminal_status">Student</td>
-                </tr>
-                <tr>
-                  <td>Location</td>
-                  <td>Indonesia</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="row-count" id="rowCount"></div>
+          <div class="fact-row">
+            <span class="fact-label" data-i18n="fact_major">Jurusan</span>
+            <span class="fact-value">Teknik Komputer &amp; Jaringan (TKJ)</span>
+          </div>
+          <div class="fact-row">
+            <span class="fact-label" data-i18n="fact_focus">Fokus</span>
+            <span class="fact-value" data-i18n="fact_focus_value">Web Development</span>
+          </div>
+          <div class="fact-row">
+            <span class="fact-label" data-i18n="fact_status">Status</span>
+            <span class="fact-value" data-i18n="fact_status_value">Siswa</span>
+          </div>
+          <div class="fact-row">
+            <span class="fact-label" data-i18n="fact_location">Lokasi</span>
+            <span class="fact-value">Indonesia</span>
           </div>
         </div>
       </div>
@@ -129,12 +105,11 @@
     <section id="about">
       <div class="container">
         <div class="section-head reveal">
-          <p class="section-cmd">$ cat about.md</p>
+          <p class="section-kicker" data-i18n="about_kicker">Tentang</p>
           <h2 class="section-title" data-i18n="about_title">Tentang Saya</h2>
         </div>
 
         <div class="about-card reveal">
-          <p class="about-comment" data-i18n="about_comment">-- Siapa itu Azriel?</p>
           <p class="about-text" data-i18n="about_text">
             Saya Azriel Aurizal Ednisia, seorang siswa jurusan Teknik Komputer dan Jaringan (TKJ) di Indonesia. Saya berfokus untuk terus mengasah kemampuan dalam pengembangan web dan jaringan melalui berbagai project nyata.
           </p>
@@ -160,7 +135,7 @@
     <section id="skills">
       <div class="container">
         <div class="section-head reveal">
-          <p class="section-cmd">$ ls stack/</p>
+          <p class="section-kicker" data-i18n="skills_kicker">Keahlian</p>
           <h2 class="section-title" data-i18n="skills_title">Keahlian &amp; Stack</h2>
         </div>
 
@@ -218,7 +193,7 @@
     <section id="projects">
       <div class="container">
         <div class="section-head reveal">
-          <p class="section-cmd">$ ls projects/</p>
+          <p class="section-kicker" data-i18n="projects_kicker">Project</p>
           <h2 class="section-title" data-i18n="projects_title">Project Saya</h2>
         </div>
       </div>
@@ -228,8 +203,8 @@
           <div class="carousel-track" id="projectsTrack" tabindex="0" role="region" aria-label="Daftar project, geser untuk melihat lebih banyak">
 
             <article class="project-card carousel-item">
-              <div class="browser-bar">
-                <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
+              <div class="project-link-bar">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                 <span class="project-domain">tekajeone.my.id</span>
               </div>
               <div class="project-body">
@@ -244,8 +219,8 @@
             </article>
 
             <article class="project-card carousel-item">
-              <div class="browser-bar">
-                <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
+              <div class="project-link-bar">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                 <span class="project-domain">coratcoretlayar.vercel.app</span>
               </div>
               <div class="project-body">
@@ -260,8 +235,8 @@
             </article>
 
             <article class="project-card carousel-item">
-              <div class="browser-bar">
-                <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
+              <div class="project-link-bar">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                 <span class="project-domain">redpixel.vercel.app</span>
               </div>
               <div class="project-body">
@@ -293,7 +268,7 @@
     <section id="certificates">
       <div class="container">
         <div class="section-head reveal">
-          <p class="section-cmd">$ cat certs/</p>
+          <p class="section-kicker" data-i18n="certs_kicker">Sertifikat</p>
           <h2 class="section-title" data-i18n="certs_title">Sertifikat</h2>
         </div>
       </div>
@@ -331,7 +306,7 @@
     <section id="contact">
       <div class="container">
         <div class="section-head reveal">
-          <p class="section-cmd">$ ping azriel</p>
+          <p class="section-kicker" data-i18n="contact_kicker">Kontak</p>
           <h2 class="section-title" data-i18n="contact_title">Hubungi Saya</h2>
         </div>
 
@@ -384,7 +359,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="container footer-inner">
-      <span class="footer-brand"><span class="logo-prompt" aria-hidden="true">$</span>azriel</span>
+      <span class="footer-brand"><span class="logo-mark" aria-hidden="true"></span>Azriel</span>
       <span>© <span id="year"></span> Azriel Aurizal Ednisia</span>
       <span data-i18n="footer_text">Dibuat dengan dedikasi.</span>
     </div>
