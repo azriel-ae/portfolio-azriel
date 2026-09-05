@@ -79,8 +79,7 @@ const translations = {
     contact_kicker: "Kontak",
     contact_title: "Hubungi Saya",
     contact_label_email: "Email",
-    contact_whatsapp_cta: "Chat via WhatsApp",
-    footer_text: "Dibuat dengan dedikasi."
+    contact_whatsapp_cta: "Chat via WhatsApp"
   },
   en: {
     nav_about: "About",
@@ -113,8 +112,7 @@ const translations = {
     contact_kicker: "Contact",
     contact_title: "Contact Me",
     contact_label_email: "Email",
-    contact_whatsapp_cta: "Chat on WhatsApp",
-    footer_text: "Built with care."
+    contact_whatsapp_cta: "Chat on WhatsApp"
   }
 };
 

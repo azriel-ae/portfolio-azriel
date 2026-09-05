@@ -35,7 +35,7 @@
   --space-md: 24px;
   --space-lg: 40px;
   --space-xl: 64px;
-  --space-2xl: 88px;
+  --space-2xl: 56px;
 }
 
 html[data-theme="light"] {
@@ -654,7 +654,7 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
 }
 
 @media (max-width: 768px) {
-  section { padding: var(--space-xl) 0; }
+  section { padding: var(--space-lg) 0; }
 
   .nav-links {
     position: absolute;
