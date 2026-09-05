@@ -684,24 +684,24 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
   .about-card { padding: var(--space-md); }
   .hero-photo-frame { width: 120px; height: 120px; }
 
-  .skills-grid { gap: 8px; }
-  .skill-category { padding: 10px 6px; }
-  .skill-category-title {
-    font-size: 0.68rem;
-    text-align: center;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
+  .skills-grid {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: var(--space-sm);
+    padding-bottom: 6px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-strong) transparent;
+    -webkit-overflow-scrolling: touch;
   }
-  .skill-list { gap: 12px; }
-  .skill-item {
-    flex-direction: column;
-    gap: 6px;
-    font-size: 0.68rem;
-    text-align: center;
-    line-height: 1.15;
+  .skills-grid::-webkit-scrollbar { height: 6px; }
+  .skills-grid::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
+
+  .skill-category {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
   }
-  .skill-icon-badge { width: 26px; height: 26px; border-radius: 7px; }
-  .skill-icon { width: 15px; height: 15px; }
 }
 
 /* ==================== REDUCED MOTION ==================== */
