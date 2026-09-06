@@ -314,8 +314,8 @@ html[data-theme="light"] .header { background: rgba(247, 248, 247, 0.85); }
 }
 
 .hero-photo-frame {
-  width: 148px;
-  height: 148px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   padding: 3px;
   background: var(--surface);
@@ -734,7 +734,7 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
 
 @media (max-width: 480px) {
   .about-card { padding: var(--space-md); }
-  .hero-photo-frame { width: 120px; height: 120px; }
+  .hero-photo-frame { width: 145px; height: 145px; }
 
   .skills-grid {
     display: flex;
