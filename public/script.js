@@ -120,16 +120,32 @@ const translations = {
 let currentLang = 'en';
 const langBtns = document.querySelectorAll('.lang-btn');
 
-function setLanguage(lang) {
+function setLanguage(lang, animate = true) {
   currentLang = lang;
   const dict = translations[lang];
+  const i18nEls = document.querySelectorAll('[data-i18n]');
 
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (dict[key]) {
-      el.textContent = dict[key];
-    }
-  });
+  const applyText = () => {
+    i18nEls.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key]) {
+        el.textContent = dict[key];
+      }
+    });
+  };
+
+  if (animate) {
+    i18nEls.forEach(el => {
+      el.style.transition = 'opacity 0.18s ease';
+      el.style.opacity = '0';
+    });
+    setTimeout(() => {
+      applyText();
+      i18nEls.forEach(el => { el.style.opacity = '1'; });
+    }, 180);
+  } else {
+    applyText();
+  }
 
   langBtns.forEach(btn => {
     const isActive = btn.getAttribute('data-lang') === lang;
@@ -144,7 +160,7 @@ langBtns.forEach(btn => {
   btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
 });
 
-setLanguage('en');
+setLanguage('en', false);
 
 // ==================== Scroll Reveal ====================
 const reveals = document.querySelectorAll('.reveal');
