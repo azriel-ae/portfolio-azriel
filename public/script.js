@@ -60,8 +60,7 @@ const translations = {
     btn_contact_me: "Hubungi Saya",
     about_kicker: "Tentang",
     about_title: "Tentang Saya",
-    about_text_1: "Saya Azriel Aurizal Ednisia, siswa sekolah menengah kejuruan dan web developer dengan minat besar pada pengembangan software dan teknologi web modern. Saya senang mengubah ide menjadi produk digital yang fungsional dan terstruktur dengan baik, mulai dari merancang antarmuka yang intuitif hingga mengembangkan aplikasi yang andal dan bekerja dengan database.",
-    about_text_2: "Saya berfokus membangun project yang praktis dan menyelesaikan masalah nyata, dengan tetap menjaga struktur kode yang bersih, performa, dan kemudahan pemeliharaan. Melalui setiap project, saya terus berupaya meningkatkan kemampuan teknis dan menciptakan software yang bermanfaat serta dibangun dengan cermat.",
+    about_text: "Saya Azriel Aurizal Ednisia, siswa sekolah menengah kejuruan dan web developer yang senang membangun produk digital yang fungsional dan terstruktur — mulai dari antarmuka yang intuitif hingga aplikasi dan database yang andal. Saya berfokus pada project praktis yang menyelesaikan masalah nyata dengan kode yang rapi dan mudah dipelihara.",
     chip_webdev: "Web Development",
     chip_vocational: "Sekolah Menengah Kejuruan",
     skills_kicker: "Keahlian",
@@ -95,8 +94,7 @@ const translations = {
     btn_contact_me: "Contact Me",
     about_kicker: "About",
     about_title: "About Me",
-    about_text_1: "I'm Azriel Aurizal Ednisia, a vocational school student and web developer with a strong interest in software development and modern web technologies. I enjoy turning ideas into functional, well-structured digital products, from designing intuitive interfaces to developing reliable applications and working with databases.",
-    about_text_2: "I focus on building practical projects that solve real problems while maintaining clean structure, performance, and maintainability. Through every project, I aim to continuously improve my technical skills and create software that is both useful and thoughtfully built.",
+    about_text: "I'm Azriel Aurizal Ednisia, a vocational school student and web developer passionate about building functional, well-structured digital products — from intuitive interfaces to reliable applications and databases. I focus on practical projects that solve real problems with clean, maintainable code.",
     chip_webdev: "Web Development",
     chip_vocational: "Vocational School",
     skills_kicker: "Skills",
@@ -119,7 +117,7 @@ const translations = {
   }
 };
 
-let currentLang = 'id';
+let currentLang = 'en';
 const langBtns = document.querySelectorAll('.lang-btn');
 
 function setLanguage(lang) {
@@ -145,6 +143,8 @@ function setLanguage(lang) {
 langBtns.forEach(btn => {
   btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
 });
+
+setLanguage('en');
 
 // ==================== Scroll Reveal ====================
 const reveals = document.querySelectorAll('.reveal');
