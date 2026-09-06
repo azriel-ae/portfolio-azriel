@@ -291,6 +291,7 @@ html[data-theme="light"] .header { background: rgba(247, 248, 247, 0.85); }
   background: var(--surface);
   border: 2px solid var(--accent);
   box-shadow: var(--shadow-sm);
+  margin-top: var(--space-sm);
   margin-bottom: var(--space-md);
 }
 
