@@ -194,6 +194,8 @@ html[data-theme="light"] .header { background: rgba(247, 248, 247, 0.85); }
   gap: 28px;
 }
 
+.nav-links .theme-toggle { margin-left: 4px; }
+
 .nav-link {
   font-size: 0.92rem;
   font-weight: 500;
@@ -676,6 +678,7 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
   }
   .nav-links.open { max-height: 320px; opacity: 1; }
   .nav-link { width: 100%; padding: 10px 0; }
+  .nav-links .theme-toggle { margin: 8px 0 4px; margin-left: 0; }
 
   .menu-toggle { display: flex; }
 
