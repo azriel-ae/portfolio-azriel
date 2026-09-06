@@ -101,7 +101,7 @@ h1, h2, h3 { font-family: var(--font-sans); }
   border-radius: 4px;
 }
 
-section { padding: var(--space-2xl) 0; }
+section { padding: var(--space-lg) 0; }
 section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
 
 /* ==================== SECTION HEADS ==================== */
@@ -697,7 +697,7 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
 }
 
 @media (max-width: 768px) {
-  section { padding: var(--space-lg) 0; }
+  section { padding: var(--space-md) 0; }
 
   .nav-links {
     position: absolute;
